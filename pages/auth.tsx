@@ -33,9 +33,9 @@ const Auth = () => {
         callbackUrl: "/",
       });
 
-      // error
+      // No longer error
+      // Works because of protected home page in /pages/index.ts
       router.push("/"); // This pushes the "/" once user has successfully logged in using useRouter()
-      // error
     } catch (error) {
       console.log(error);
     }
