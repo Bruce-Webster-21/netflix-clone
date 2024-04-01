@@ -2,11 +2,8 @@ import Input from "@/components/Input";
 import { useCallback, useState } from "react";
 import axios from "axios";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/router";
 
 const Auth = () => {
-  const router = useRouter();
-
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -29,17 +26,12 @@ const Auth = () => {
       await signIn("credentials", {
         email,
         password,
-        redirect: false,
-        callbackUrl: "/",
+        callbackUrl: "/profiles",
       });
-
-      // No longer error
-      // Works because of protected home page in /pages/index.ts
-      router.push("/"); // This pushes the "/" once user has successfully logged in using useRouter()
     } catch (error) {
       console.log(error);
     }
-  }, [email, password, router]);
+  }, [email, password]);
 
   //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
   // When and how to use async functions
