@@ -4,6 +4,8 @@ import NavbarItem from "./NavbarItem";
 import { BsChevronDown, BsSearch, BsBell } from "react-icons/bs";
 import AccountMenu from "./AccountMenu";
 
+// We generally use upper case for constants that are “hard-coded”. Or, in other words, when the value is known prior to execution and directly written into the code.
+// https://javascript.info/task/uppercast-constant#:~:text=We%20generally%20use%20upper%20case,directly%20written%20into%20the%20code.
 const TOP_OFFSET = 66;
 
 const Navbar = () => {
